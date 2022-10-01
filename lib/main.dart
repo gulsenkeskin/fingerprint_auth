@@ -1,3 +1,4 @@
+import 'package:fingerprint_auth/page/fingerprint_page.dart';
 import 'package:fingerprint_auth/page/home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
       ),
-      home: const HomePage(),
+      home: const FingerprintPage(),
     );
   }
 }
