@@ -31,11 +31,7 @@ class FingerprintPage extends StatelessWidget {
       text: 'Kullanılabilirliği kontrol et',
       icon: Icons.event_available,
       onClicked: () async{
-        final isAuthenticated= await LocalAuthApi.authenticate();
-        if(isAuthenticated){
-          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=> const HomePage()));
-          
-        }
+
 
       });
 
@@ -56,5 +52,14 @@ class FingerprintPage extends StatelessWidget {
       );
 
   Widget buildAuthenticate(BuildContext context) => buildButton(
-      text: 'Kimlik Doğrulama', icon: Icons.lock_open, onClicked: () {});
+      text: 'Kimlik Doğrulama', icon: Icons.lock_open, onClicked: () async {
+
+    final isAuthenticated = await LocalAuthApi.authenticate();
+
+    if (isAuthenticated) {
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => HomePage()),
+      );
+    }
+  });
 }
