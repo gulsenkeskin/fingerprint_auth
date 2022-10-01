@@ -1,5 +1,6 @@
 import 'package:fingerprint_auth/api/local_auth_api.dart';
 import 'package:fingerprint_auth/main.dart';
+import 'package:fingerprint_auth/page/home_page.dart';
 import 'package:flutter/material.dart';
 
 class FingerprintPage extends StatelessWidget {
@@ -30,6 +31,11 @@ class FingerprintPage extends StatelessWidget {
       text: 'Kullanılabilirliği kontrol et',
       icon: Icons.event_available,
       onClicked: () async{
+        final isAuthenticated= await LocalAuthApi.authenticate();
+        if(isAuthenticated){
+          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=> const HomePage()));
+          
+        }
 
       });
 
