@@ -85,7 +85,7 @@ class FingerprintPage extends StatelessWidget {
       text: 'Kimlik Doğrulama',
       icon: Icons.lock_open,
       onClicked: () async {
-        final isAuthenticated = await LocalAuthApi.authenticate();
+          final isAuthenticated = await LocalAuthApi.authenticate();
 
         if (isAuthenticated) {
           Navigator.of(context).pushReplacement(
