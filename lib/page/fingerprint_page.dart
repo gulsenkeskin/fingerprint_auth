@@ -6,9 +6,18 @@ class FingerprintPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: AppBar(
-      title:const Text(MyApp.title),
-      centerTitle: true,
-    ),
-  );
+        appBar: AppBar(
+          title: const Text(MyApp.title),
+          centerTitle: true,
+        ),
+        body: Padding(
+          padding: EdgeInsets.all(30),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [],
+            ),
+          ),
+        ),
+      );
 }
