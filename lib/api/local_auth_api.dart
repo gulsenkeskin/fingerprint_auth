@@ -2,7 +2,7 @@ import 'package:flutter/services.dart';
 import 'package:local_auth/local_auth.dart';
 
 class LocalAuthApi {
-  static final _auth = LocalAuthentication();
+  static final LocalAuthentication  _auth = LocalAuthentication();
 
   static Future<bool> hasBiometrics() async {
     try {
@@ -32,6 +32,7 @@ class LocalAuthApi {
           stickyAuth: true,
           //parmak izi doğrulanmamışsa dialog çıkartır
           useErrorDialogs: true,
+          biometricOnly: true,
         ),
       );
     } on PlatformException catch (e) {
