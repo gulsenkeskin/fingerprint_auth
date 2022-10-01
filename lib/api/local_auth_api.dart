@@ -20,7 +20,9 @@ class LocalAuthApi {
       return await _auth.authenticate(
         localizedReason: 'Kimlik doğrulaması için parmak izini tara',
         options: const AuthenticationOptions(
+          //uygulamayı arka plana alıp yeniden açınca parmak izini yeniden doğrulamasını ister
           stickyAuth: true,
+          //parmak izi doğrulanmamışsa dialog çıkartır
           useErrorDialogs: true,
         ),
       );
