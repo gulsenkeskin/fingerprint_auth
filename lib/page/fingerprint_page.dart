@@ -11,13 +11,41 @@ class FingerprintPage extends StatelessWidget {
           centerTitle: true,
         ),
         body: Padding(
-          padding: EdgeInsets.all(30),
+          padding:const EdgeInsets.all(30),
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [],
+              children: [
+                buildAvailability(context),
+                const SizedBox(height: 24),
+                buildAuthenticate(context),
+              ],
             ),
           ),
         ),
       );
+
+  Widget buildAvailability(BuildContext context) => buildButton(
+      text: 'Kullanılabilirliği kontrol et',
+      icon: Icons.event_available,
+      onClicked: () {});
+
+  Widget buildButton(
+          {required String text,
+          required IconData icon,
+          required VoidCallback onClicked}) =>
+      ElevatedButton.icon(
+        style: ElevatedButton.styleFrom(
+          minimumSize: const Size.fromHeight(50),
+        ),
+        icon: Icon(icon, size: 26),
+        label: Text(
+          text,
+          style: const TextStyle(fontSize: 20),
+        ),
+        onPressed: onClicked,
+      );
+
+  Widget buildAuthenticate(BuildContext context) => buildButton(
+      text: 'Kimlik Doğrulama', icon: Icons.lock_open, onClicked: () {});
 }
