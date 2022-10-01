@@ -1,3 +1,4 @@
+import 'package:fingerprint_auth/api/local_auth_api.dart';
 import 'package:fingerprint_auth/main.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +12,7 @@ class FingerprintPage extends StatelessWidget {
           centerTitle: true,
         ),
         body: Padding(
-          padding:const EdgeInsets.all(30),
+          padding: const EdgeInsets.all(30),
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -28,7 +29,9 @@ class FingerprintPage extends StatelessWidget {
   Widget buildAvailability(BuildContext context) => buildButton(
       text: 'Kullanılabilirliği kontrol et',
       icon: Icons.event_available,
-      onClicked: () {});
+      onClicked: () async{
+
+      });
 
   Widget buildButton(
           {required String text,
